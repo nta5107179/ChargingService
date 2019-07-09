@@ -1,0 +1,16 @@
+﻿<Application x:Class="Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Login.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary/DictionaryMain.xaml"/>
+                <ResourceDictionary Source="Dictionary/DictionaryLogin.xaml"/>
+                <ResourceDictionary Source="Dictionary/DictionaryCIMMain.xaml"/>
+                <ResourceDictionary Source="/Controls;component/Dictionary/GenericDictionary.xaml"/>
+                <ResourceDictionary Source="Dictionary/DictionaryCIMShow.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

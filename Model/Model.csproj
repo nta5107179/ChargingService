@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C5A89B4-21E9-4F23-8168-4C59D4480C73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AM_CIMData.cs" />
+    <Compile Include="AM_CIMPolice.cs" />
+    <Compile Include="AM_DownLecture.cs" />
+    <Compile Include="AM_MDownLecture.cs" />
+    <Compile Include="AM_MUpLecture.cs" />
+    <Compile Include="AM_UpLecture.cs" />
+    <Compile Include="CAR_BelongsTo.cs" />
+    <Compile Include="CAR_CarBrand.cs" />
+    <Compile Include="CAR_CarType.cs" />
+    <Compile Include="CS_SystemMessage.cs" />
+    <Compile Include="GPS.cs" />
+    <Compile Include="G_ChargeBattery.cs" />
+    <Compile Include="G_ChargePile.cs" />
+    <Compile Include="G_ChargeStation.cs" />
+    <Compile Include="G_City.cs" />
+    <Compile Include="G_Community.cs" />
+    <Compile Include="G_District.cs" />
+    <Compile Include="G_Province.cs" />
+    <Compile Include="G_Street.cs" />
+    <Compile Include="G_SuperAdmin.cs" />
+    <Compile Include="G_SystemMessage.cs" />
+    <Compile Include="G_SystemMessageType.cs" />
+    <Compile Include="G_Type.cs" />
+    <Compile Include="G_User.cs" />
+    <Compile Include="G_UserCar.cs" />
+    <Compile Include="G_Version.cs" />
+    <Compile Include="G_Version2.cs" />
+    <Compile Include="LOG_SystemError.cs" />
+    <Compile Include="Models.cs" />
+    <Compile Include="PAY_Alipay.cs" />
+    <Compile Include="PAY_IdCard.cs" />
+    <Compile Include="PAY_TransactionRecord.cs" />
+    <Compile Include="PAY_TRFrom.cs" />
+    <Compile Include="PAY_TRType.cs" />
+    <Compile Include="Project\Client_ChargePile_Data_DC.cs" />
+    <Compile Include="Project\Client_ChargePile_Data_AC.cs" />
+    <Compile Include="Project\Client_ChargePile_GunData_DC.cs" />
+    <Compile Include="Project\Client_ChargePile_GunData_AC.cs" />
+    <Compile Include="Project\Listener_ChargePile_GunData_DC.cs" />
+    <Compile Include="Project\Listener_ChargePile_GunData_AC.cs" />
+    <Compile Include="Project\Listener_ChargePile_Data_DC.cs" />
+    <Compile Include="Project\Listener_ChargePile_Data_AC.cs" />
+    <Compile Include="Project\Controls_ComboBoxList.cs" />
+    <Compile Include="Project\Listener_ChargeStation_Data.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_CollectClip.cs" />
+    <Compile Include="User_SystemMessage.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,93 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Controls="clr-namespace:Controls;assembly=Controls" x:Class="Client.CIM.CIMMain" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000"
+	Title="CIMMain" Background="White">
+
+	<DockPanel>
+		<Border Height="40" DockPanel.Dock="Top" BorderThickness="0,3,0,0" BorderBrush="#FF1CB6BE" VerticalAlignment="Top">
+			<DockPanel>
+				<DockPanel x:Name="dockpanel_backmain" Height="29" LastChildFill="False" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
+					<Image Source="/Client;component/Resources/main_top_2.png" />
+					<Label Content="主页" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF333333"/>
+					<Label Content=">> 充电监控" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF333333" Padding="0,5,5,5"/>
+				</DockPanel>
+				<WrapPanel Margin="0" Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center">
+					<StackPanel Height="26" Margin="5,0,0,0" Orientation="Horizontal">
+						<Image Source="/Client;component/Resources/cim_1.png" />
+						<TextBlock TextWrapping="Wrap" Text="充电桩总数" TextDecorations="{x:Null}" VerticalAlignment="Center" Foreground="#FF444444"/>
+						<TextBlock x:Name="text_pilesum" TextWrapping="Wrap" Text="0" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="5,5,0,5" Foreground="#FFE33B7A"/>
+						<TextBlock TextWrapping="Wrap" Text="台" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="0,5" Foreground="#FFE33B7A"/>
+					</StackPanel>
+					<StackPanel Height="26" Margin="5,0,0,0" Orientation="Horizontal">
+						<Image Source="/Client;component/Resources/cim_2.png" />
+						<TextBlock TextWrapping="Wrap" Text="充电中" TextDecorations="{x:Null}" VerticalAlignment="Center" Foreground="#FF444444"/>
+						<TextBlock x:Name="text_pileiscd" TextWrapping="Wrap" Text="0" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="5,5,0,5" Foreground="#FFE33B7A"/>
+						<TextBlock TextWrapping="Wrap" Text="台" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="0,5" Foreground="#FFE33B7A"/>
+					</StackPanel>
+					<StackPanel Height="26" Margin="5,0,0,0" Orientation="Horizontal">
+						<Image Source="/Client;component/Resources/cim_3.png" />
+						<TextBlock TextWrapping="Wrap" Text="未充电" TextDecorations="{x:Null}" VerticalAlignment="Center" Foreground="#FF444444"/>
+						<TextBlock x:Name="text_pilenocd" TextWrapping="Wrap" Text="0" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="5,5,0,5" Foreground="#FFE33B7A"/>
+						<TextBlock TextWrapping="Wrap" Text="台" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="0,5" Foreground="#FFE33B7A"/>
+					</StackPanel>
+					<StackPanel Height="26" Margin="5,0,0,0" Orientation="Horizontal">
+						<Image Source="/Client;component/Resources/cim_4.png" />
+						<TextBlock TextWrapping="Wrap" Text="未连接" TextDecorations="{x:Null}" VerticalAlignment="Center" Foreground="#FF444444"/>
+						<TextBlock x:Name="text_pilenolink" TextWrapping="Wrap" Text="0" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="5,5,0,5" Foreground="#FFE33B7A"/>
+						<TextBlock TextWrapping="Wrap" Text="台" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="0,5" Foreground="#FFE33B7A"/>
+					</StackPanel>
+					<StackPanel Height="26" Margin="5,0" Orientation="Horizontal">
+						<Image Source="/Client;component/Resources/cim_5.png" />
+						<TextBlock TextWrapping="Wrap" Text="异常" TextDecorations="{x:Null}" VerticalAlignment="Center" Foreground="#FF444444"/>
+						<TextBlock x:Name="text_pilepolice" TextWrapping="Wrap" Text="0" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="5,5,0,5" Foreground="#FFE33B7A"/>
+						<TextBlock TextWrapping="Wrap" Text="台" TextDecorations="{x:Null}" VerticalAlignment="Center" Margin="0,5" Foreground="#FFE33B7A"/>
+					</StackPanel>
+				</WrapPanel>
+			</DockPanel>
+		</Border>
+		<DockPanel Background="#FF303030">
+			<Grid Width="125" HorizontalAlignment="Left">
+				<Image Width="125" Height="500" Source="/Client;component/Resources/cim_left_bg.png" Stretch="Fill" Margin="0,50,0,0" VerticalAlignment="Top"/>
+				<DockPanel x:Name="dp_ac" Width="101" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,80,0,0" LastChildFill="False" MouseUp="dp_ac_MouseUp">
+					<DockPanel.Background>
+						<ImageBrush ImageSource="/Client;component/Resources/cim_left_1.png"/>
+					</DockPanel.Background>
+					<TextBlock x:Name="text_acNum" Text="0" DockPanel.Dock="Top" FontSize="24" Foreground="White" HorizontalAlignment="Center" Margin="10,8,0,0" />
+					<TextBlock Text="交流桩" DockPanel.Dock="Top" Foreground="{Binding Foreground, ElementName=text_acNum}" HorizontalAlignment="Center" Margin="10,0,0,0" FontSize="13.333" />
+				</DockPanel>
+				<DockPanel x:Name="dp_dc" Width="101" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,150,0,0" LastChildFill="False" MouseUp="dp_dc_MouseUp">
+					<TextBlock x:Name="text_dcNum" Text="0" DockPanel.Dock="Top" FontSize="24" Foreground="#FF616161" HorizontalAlignment="Center" Margin="10,8,0,0" />
+					<TextBlock Text="直流桩" DockPanel.Dock="Top" Foreground="{Binding Foreground, ElementName=text_dcNum}" HorizontalAlignment="Center" Margin="10,0,0,0" FontSize="13.333" />
+				</DockPanel>
+			</Grid>
+			<Grid DockPanel.Dock="Right">
+				<ScrollViewer x:Name="sv_ac" Template="{DynamicResource scroll}" VerticalScrollBarVisibility="Auto" Padding="50,50,0,50">
+					<!--<ScrollViewer.Background>
+						<VisualBrush TileMode="Tile" Viewport="0,0,158,158" ViewportUnits="Absolute">
+							<VisualBrush.Visual>  
+								<Image Source="/Client;component/Resources/cim_bg.png"/>  
+							</VisualBrush.Visual>  
+						</VisualBrush>
+					</ScrollViewer.Background>-->
+                    <StackPanel x:Name="sp_ac" />
+				</ScrollViewer>
+				<ScrollViewer x:Name="sv_dc" Template="{DynamicResource scroll}" VerticalScrollBarVisibility="Auto" Padding="50,50,0,50" Visibility="Hidden">
+					<!--<ScrollViewer.Background>
+						<VisualBrush TileMode="Tile" Viewport="0,0,158,158" ViewportUnits="Absolute">
+							<VisualBrush.Visual>  
+								<Image Source="/Client;component/Resources/cim_bg.png"/>  
+							</VisualBrush.Visual>  
+						</VisualBrush>
+					</ScrollViewer.Background>-->
+                    <StackPanel x:Name="sp_dc" />
+                </ScrollViewer>
+			</Grid>
+		</DockPanel>
+		
+	</DockPanel>
+</Page>

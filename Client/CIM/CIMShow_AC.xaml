@@ -1,0 +1,54 @@
+﻿<Window x:Class="Client.CIM.CIMShow_AC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:Controls="clr-namespace:Controls;assembly=Controls"
+        Title="{Binding cp_name}" Height="610" Width="900" WindowStyle="None" ResizeMode="NoResize" Foreground="Black" BorderThickness="1" BorderBrush="#FF0F7978" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <DockPanel>
+		<Grid VerticalAlignment="Top" DockPanel.Dock="Top">
+			<DockPanel Height="25" LastChildFill="False" Margin="0" VerticalAlignment="Top" Background="#FF00ADB8" DockPanel.Dock="Top" MouseDown="DockPanel_MouseDown">
+				<TextBlock Text="{Binding cp_name}" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" />
+			</DockPanel>
+			<Controls:WindowClose Margin="0" VerticalAlignment="Top" Foreground="#FF4B4C4C" Width="25" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Height="25" DockPanel.Dock="Right"/>
+            <Controls:WindowMinimum VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,25,0" DockPanel.Dock="Right" Foreground="#FF4B4C4C" />
+		</Grid>
+		<ScrollViewer Template="{DynamicResource scroll}" Padding="0,30">
+		<DockPanel>
+			<Border Background="#FFeff6f9" DockPanel.Dock="Top" Margin="30,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="#FFDFEAEF" Padding="0,25">
+				<DockPanel>
+					<Border x:Name="border_cim" Width="299" Height="214" HorizontalAlignment="Left" Margin="25,0,0,0" BorderThickness="1" Background="#FF303030" BorderBrush="#FF636363" VerticalAlignment="Top">
+						<Controls:CIMShowPile4Gun/>
+					</Border>
+					<DockPanel Margin="25,0,25,0">
+						<DockPanel DockPanel.Dock="Top">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding cp_name}" VerticalAlignment="Center" FontSize="16" Grid.ColumnSpan="2"/>
+							<Image Source="/Client;component/Resources/cimshow_1.png" Width="62" Height="17" HorizontalAlignment="Left" Style="{DynamicResource img_ispolice}" />
+						</DockPanel>
+                        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" DockPanel.Dock="Bottom">
+                            <Label x:Name="lab_quickstop" Content="停止充电" Height="35" Width="120" HorizontalAlignment="Left" Background="#FFE33B7A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Foreground="White" MouseUp="lab_quickstop_MouseUp" />
+                            <Label x:Name="lab_solveMalfunction" Content="处理故障" Height="35" Width="120" HorizontalAlignment="Left" Background="#FF00ADB8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Foreground="White" MouseUp="lab_solveMalfunction_MouseUp" Margin="5,0,0,0" />
+						</StackPanel>
+						<StackPanel DockPanel.Dock="Top" Margin="0,5">
+							<DockPanel Margin="0,0,0,5">
+								<TextBlock Text="设备类型：" Foreground="#FF666666" />
+								<TextBlock TextWrapping="Wrap" Text="{Binding t_name}" Foreground="#FF666666"/>
+							</DockPanel>
+							<DockPanel Margin="0,0,0,5">
+								<TextBlock Text="协议类型：" Foreground="#FF666666" />
+								<TextBlock TextWrapping="Wrap" Text="{Binding v_name}" Foreground="#FF666666"/>
+							</DockPanel>
+							<DockPanel Margin="0,0,0,5">
+								<TextBlock Text="设备序列号：" Foreground="#FF666666" />
+								<TextBlock TextWrapping="Wrap" Text="{Binding cp_code}" Foreground="#FF666666"/>
+							</DockPanel>
+						</StackPanel>
+					</DockPanel>
+				</DockPanel>
+			</Border>
+			<StackPanel x:Name="guns">
+				
+			</StackPanel>
+		</DockPanel>
+		</ScrollViewer>
+		
+	</DockPanel>
+</Window>

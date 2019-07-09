@@ -1,0 +1,889 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoreClass</name>
+    </assembly>
+    <members>
+        <member name="T:CoreClass.ConnectionStrings">
+             <summary>
+            ConnectionStrings 连接字串类
+             </summary>
+        </member>
+        <member name="M:CoreClass.ConnectionStrings.DESEncryption(System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="Text">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.ConnectionStrings.DESDecryption(System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="Text">内容</param>
+            <returns></returns>
+        </member>
+        <member name="P:CoreClass.ConnectionStrings.GetConnectString1">
+            <summary>
+            得到连接字
+            </summary>
+        </member>
+        <member name="T:CoreClass.OperateArrayClass">
+            <summary>
+            数组操作类
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.RemoveRepeat(System.Object[])">
+            <summary>
+            移除重复的项
+            </summary>
+            <param name="arr">源数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.RemoveRepeat(System.Collections.Generic.List{System.Object})">
+            <summary>
+            移除重复的项
+            </summary>
+            <param name="arr">源泛型</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.BubbleSort(System.Int32[],System.String)">
+            <summary>
+            冒泡排序
+            </summary>
+            <param name="arr">源数组</param>
+            <param name="sort">排序方式 asc or desc</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.IsEqual(System.Int32[][])">
+            <summary>
+            判断多个数组数据是否相等
+            </summary>
+            <param name="objArr">数组数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.IsEqual(System.String[][])">
+            <summary>
+            判断多个数组数据是否相等
+            </summary>
+            <param name="objArr">数组数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateArrayClass.IsEqual(System.Object[][])">
+            <summary>
+            判断多个数组数据是否相等
+            </summary>
+            <param name="objArr">数组数组</param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreClass.OperateDataClass">
+            <summary>
+            数据集操作类
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateDataClass.Distinct(System.Data.DataTable,System.String)">
+            <summary>
+            去掉重复的行
+            </summary>
+            <param name="dt">源数据集</param>
+            <param name="colname">列名</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateDataClass.ExchangeRowCol(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            交换行列
+            </summary>
+            <param name="dt">源数据集</param>
+            <param name="prefix">新数据集的列名前缀</param>
+            <param name="hascolname">是否需要将原列名放入新数据集的第一列</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateDataClass.AddColumn(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            创建新列
+            </summary>
+            <param name="dt">源数据集</param>
+            <param name="colname">列名</param>
+            <param name="systemtype">系统类型(如System.Int32)</param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreClass.OperateSqlClass">
+            <summary>
+            T-Sql语句 存储过程执行类
+            </summary>
+        </member>
+        <member name="T:CoreClass.SqlProc">
+            <summary>
+            数据库连接基类
+            </summary>
+        </member>
+        <member name="M:CoreClass.SqlProc.SqlProcOpen">
+            <summary>
+            打开数据库连接
+            </summary>
+        </member>
+        <member name="M:CoreClass.SqlProc.SqlProcClose">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:CoreClass.SqlProc.Execute">
+            <summary>
+            执行T-sql语句,返回执行结果
+            </summary>
+            <param name="sql">T-sql语句</param>
+        </member>
+        <member name="M:CoreClass.SqlProc.Execute(System.Data.DataSet)">
+            <summary>
+            执行T-sql语句,返回执数据集
+            </summary>
+            <param name="sql">T-sql语句</param>
+            <param name="ds">ref 返回数据集</param>
+        </member>
+        <member name="M:CoreClass.SqlProc.Execute(System.String,System.Data.DataSet)">
+            <summary>
+            不带参数的存储过程
+            </summary>
+            <param name="proceName">存储过程名</param>
+            <param name="ds">ref 返回数据集</param>
+        </member>
+        <member name="M:CoreClass.SqlProc.Execute(System.String,System.Object[],System.Data.DataSet)">
+            <summary>
+            带参数的存储过程
+            </summary>
+            <param name="procName">存储过程名</param>
+            <param name="objA">参数值数组</param>
+            <param name="ds">返回dataset</param>
+        </member>
+        <member name="M:CoreClass.SqlProc.ObjArrayToParmArray(System.String,System.Object[])">
+            <summary>
+            对象数组 转换成 参数数组
+            </summary>
+            <param name="procName">存储过程名</param>
+            <param name="objA">对象数组</param>
+            <return name="parmA">参数数组</return>
+        </member>
+        <member name="M:CoreClass.SqlProc.GetSqlDBTypeFromName(System.String)">
+            <summary>
+            转换SQL类型
+            </summary>
+            <param name="typeName">类型名称</param>
+            <return>SqlDbType</return>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Open">
+            <summary>
+            打开数据库连接
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Open(System.String)">
+            <summary>
+            打开数据库连接
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Close">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Insert(System.String)">
+            <summary>
+            数据库操作-添加行
+            </summary>
+            <param name="sql">T-Sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Insert(System.Object[])">
+            <summary>
+            数据库操作-添加行
+            </summary>
+            <param name="objarr">目标实体数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Delete(System.String)">
+            <summary>
+            数据库操作-删除行
+            </summary>
+            <param name="sql">T-Sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Delete(System.Object[])">
+            <summary>
+            数据库操作-删除行
+            </summary>
+            <param name="objarr">目标实体数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Update(System.String)">
+            <summary>
+            数据库操作-修改行
+            </summary>
+            <param name="sql">T-Sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Update(System.Object[],System.Object[])">
+            <summary>
+            数据库操作-修改行
+            </summary>
+            <param name="objarr">修改前实体数组(指定条件)</param>
+            <param name="objarr2">修改后实体数组(指定修改内容)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Select(System.String)">
+            <summary>
+            数据库操作-查询数据
+            </summary>
+            <param name="sql">执行语句</param>
+            <returns>dataset数据集</returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Selectproce(System.String,System.Data.DataSet@)">
+            <summary>
+            数据库操作-查询数据
+            </summary>
+            <param name="proceName">存储过程名</param>
+            <returns>dataset数据集</returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.Selectproce(System.String,System.Object[],System.Data.DataSet@)">
+            <summary>
+            数据库操作-查询数据
+            </summary>
+            <param name="proceName">存储过程名</param>
+            <param name="objarr">参数对象数组</param>
+            <returns>dataset数据集</returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.getIdentityCells(System.String)">
+            <summary>
+            得到表中的自增长列
+            </summary>
+            <param name="tablename">表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateSqlClass.getProperties``1(``0,System.String,System.String[])">
+            <summary>
+            获取实体的属性和值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t">实体</param>
+            <param name="arr">自增长列数组</param>
+            <returns></returns>
+        </member>
+        <member name="T:CoreClass.OperateFileClass">
+            <summary>
+            文件操作类
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.UploadFile(System.Web.HttpPostedFile,System.String,System.String,System.Int64)">
+            <summary>
+            文件上传
+            </summary>
+            <param name="imgFile">文件对象</param>
+            <param name="dirPath">目标位置(格式：a/b/)</param>
+            <param name="filetype">允许的上传类型("|"分隔)</param>
+            <param name="uploadsize">最大允许上传量(字节 B)</param>
+            <returns>文件名</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.SaveImage(System.Drawing.Bitmap,System.String,System.String,System.String)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="file">文件对象</param>
+            <param name="ext">保存文件扩展名(jpg,jpeg,gif,bmp,png之一)</param>
+            <param name="path">目标位置(格式：a/b/)</param>
+            <param name="filename">文件名，为null则自动生成</param>
+            <returns>文件名</returns>
+        </member>
+        <!-- 对于成员“M:CoreClass.OperateFileClass.KiResizeImage(System.Drawing.Bitmap,System.Int32,System.Int32)”忽略有格式错误的 XML 注释 -->
+        <member name="M:CoreClass.OperateFileClass.ReadFile(System.String)">
+            <summary>
+            读取字符文件
+            </summary>
+            <param name="path">文件路径(格式：a/b/a.txt)</param>
+            <returns>文件内容</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.WriteFile(System.String,System.String)">
+            <summary>
+            写入字符文件
+            </summary>
+            <param name="content">写入内容</param>
+            <param name="path">文件路径(格式：a/b/a.txt)</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.MoveFile(System.String,System.String)">
+            <summary>
+            移动文件
+            </summary>
+            <param name="path">源文件路径(格式：a/b/a.txt)</param>
+            <param name="movetopath">目标文件路径(格式：a/b/a.txt)</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.CopyFile(System.String,System.String)">
+            <summary>
+            复制文件
+            </summary>
+            <param name="path">源文件路径(格式：a/b/a.txt)</param>
+            <param name="movetopath">目标文件路径(格式：a/b/)</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.DelFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">源文件路径(格式：a/b/a.txt)</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateFileClass.XmlRead(System.String,System.String)">
+            <summary>
+            读取Xml文件
+            </summary>
+            <param name="path">源文件路径(格式：a/b/c.xml)</param>
+            <param name="parentnodename">目标结点XPath表达式</param>
+            <returns>指定结点下所有子节点的键 值对集合</returns>
+        </member>
+        <member name="P:CoreClass.OperateFileClass.g_FileSaveName">
+            <summary>
+            获取一个绝对不重复的文件名
+            </summary>
+        </member>
+        <member name="T:CoreClass.OperateMemoryClass">
+            <summary>
+            功能操作类
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.AlertMsg(System.Web.UI.Page,System.String)">
+            <summary>
+            页面JavaScript消息提示
+            </summary>
+            <param name="page">页面类</param>
+            <param name="message">提示消息</param>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.AlertMsg(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            页面JavaScript调用
+            </summary>
+            <param name="page">页面类</param>
+            <param name="script">脚本</param>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.AlertMsg(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            页面JavaScript消息提示并跳转
+            </summary>
+            <param name="page">页面类</param>
+            <param name="message">提示消息</param>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SendMailToSmtp(System.String,System.String,System.String,System.String,System.String[],System.String[],System.String,System.String)">
+            <summary>
+            SMTP邮件群发函数
+            </summary>
+            <param name="SmtpClientHost">获取或设置用于 SMTP 事务的主机的名称或 IP 地址</param>
+            <param name="MessageFromName">发件人名</param>
+            <param name="MessageFrom">发件人邮箱</param>
+            <param name="MessageFromPwd">发件人邮箱密码</param>
+            <param name="MessageTo">收件人</param>
+            <param name="MessageCC">抄送人</param>
+            <param name="MessageSubject">邮件标题</param>
+            <param name="MessageBody">邮件内容</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SendMailToLocalhost(System.String,System.String,System.String,System.String[],System.String[],System.String,System.String)">
+            <summary>
+            虚拟SMTP邮件群发函数
+            </summary>
+            <param name="SmtpClientHost">获取或设置用于 SMTP 事务的主机的名称或 IP 地址</param>
+            <param name="MessageFromName">发件人名</param>
+            <param name="MessageFrom">发件人邮箱</param>
+            <param name="MessageTo">收件人</param>
+            <param name="MessageCC">抄送人</param>
+            <param name="MessageSubject">邮件标题</param>
+            <param name="MessageBody">邮件内容</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.IsIPAddress(System.String)">
+            <summary>
+            判断ip地址是否正确
+            </summary>
+            <param name="str1">待检测ip</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCache(System.String,System.Object)">
+            <summary>
+            创建缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="obj">值</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCache(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            创建缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="obj">值</param>
+            <param name="cachedependency">文件依赖项</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCache(System.String,System.Object,System.Web.Caching.SqlCacheDependency)">
+            <summary>
+            创建缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="obj">值</param>
+            <param name="sqlcachedependency">数据库依赖项</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetCache(System.String)">
+            <summary>
+            读取缓存
+            </summary>
+            <param name="key">键</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveCache(System.String)">
+            <summary>
+            移除缓存
+            </summary>
+            <param name="key">键</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.EditCache(System.String,System.Object)">
+            <summary>
+            修改缓存项
+            </summary>
+            <param name="key">键</param>
+            <param name="obj">值</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.EditCache(System.String,System.Object,System.Web.Caching.CacheDependency)">
+            <summary>
+            修改缓存项
+            </summary>
+            <param name="key">键</param>
+            <param name="obj">值</param>
+            <param name="cachedependency">依赖项</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCookie(System.String,System.String,System.String)">
+            <summary>
+            添加或修改cookie
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCookie(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            添加或修改cookie
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <param name="days">日</param>
+            <param name="hours">时</param>
+            <param name="minutes">分</param>
+            <param name="second">秒</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetCookie(System.String)">
+            <summary>
+            获取cookie值
+            </summary>
+            <param name="name">名称</param>
+            <returns>cookie值</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveCookie(System.String,System.String)">
+            <summary>
+            移除cookie
+            </summary>
+            <param name="name">名称</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCookie(System.String,System.String[],System.String[],System.String)">
+            <summary>
+            添加或修改cookie，键值对的数量必须相同
+            </summary>
+            <param name="name">名称</param>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetCookie(System.String,System.String[],System.String[],System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            添加或修改cookie，键值对的数量必须相同
+            </summary>
+            <param name="name">名称</param>
+            <param name="key">键</param>
+            <param name="value">值</param>
+            <param name="days">日</param>
+            <param name="hours">时</param>
+            <param name="minutes">分</param>
+            <param name="second">秒</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetCookieKey(System.String,System.String)">
+            <summary>
+            获取cookie值
+            </summary>
+            <param name="name">名称</param>
+            <param name="key">键</param>
+            <returns>cookie值</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveCookieKey(System.String,System.String,System.String)">
+            <summary>
+            移除cookie
+            </summary>
+            <param name="name">名称</param>
+            <param name="key">键</param>
+            <param name="domain">域名</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.NetCookieToHttpCookie(System.Net.CookieCollection)">
+            <summary>
+            将Net.CookieCollection转换成Web.HttpCookieCollection
+            </summary>
+            <param name="cookie">Net.CookieCollection</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.NetCookieToHttpCookie(System.Net.CookieCollection,System.String)">
+            <summary>
+            将Net.CookieCollection转换成Web.HttpCookieCollection
+            </summary>
+            <param name="cookie">Net.CookieCollection</param>
+            <param name="domain">域</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.HttpCookieToNetCookie(System.Web.HttpCookieCollection)">
+            <summary>
+            将Web.HttpCookieCollection转换成Net.CookieCollection
+            </summary>
+            <param name="cookie">Web.HttpCookieCollection</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.HttpCookieToNetCookie(System.Web.HttpCookieCollection,System.String)">
+            <summary>
+            将Web.HttpCookieCollection转换成Net.CookieCollection
+            </summary>
+            <param name="cookie">Web.HttpCookieCollection</param>
+            <param name="domain">域</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetSession(System.String,System.String,System.Int32)">
+            <summary>
+            添加或修改session
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <param name="sessiontimeout">过期时间(分钟)</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetSession(System.String)">
+            <summary>
+            获取session值
+            </summary>
+            <param name="name">名称</param>
+            <returns>session值</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveSession(System.String)">
+            <summary>
+            移除session
+            </summary>
+            <param name="name">名称</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetApplication(System.String,System.Object)">
+            <summary>
+            添加或修改application
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.SetApplication(System.String,System.Object,System.Web.HttpContext@)">
+            <summary>
+            添加或修改application
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <param name="hc">外部传入的HttpContext</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetApplication(System.String)">
+            <summary>
+            获取application值
+            </summary>
+            <param name="name">名称</param>
+            <returns>application值</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.GetApplication(System.String,System.Web.HttpContext@)">
+            <summary>
+            获取application值
+            </summary>
+            <param name="name">名称</param>
+            <param name="hc">外部传入的HttpContext</param>
+            <returns>application值</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveApplication(System.String)">
+            <summary>
+            移除application
+            </summary>
+            <param name="name">名称</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.RemoveApplication(System.String,System.Web.HttpContext@)">
+            <summary>
+            移除application
+            </summary>
+            <param name="name">名称</param>
+            <param name="hc">外部传入的HttpContext</param>
+            <returns>布尔</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.CDA(System.String,System.String[],System.String)">
+            <summary>
+            跨域访问
+            </summary>
+            <param name="url">访问地址</param>
+            <param name="action">参数数组(如["action1=1","action2=2"]),可为null</param>
+            <param name="domain">域名(如果是子域名跨域),可为null</param>
+            <returns>返回访问页面的输出内容</returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.Serialize(System.Object)">
+            <summary>
+            序列化
+            </summary>
+            <param name="dy">需要序列化的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateMemoryClass.Deserialize(System.Byte[])">
+            <summary>
+            反序列化
+            </summary>
+            <param name="_byte">需要反序列化的byte[]</param>
+            <returns></returns>
+        </member>
+        <member name="P:CoreClass.OperateMemoryClass.IPAddress">
+            <summary>
+            获取真实IP
+            </summary>
+        </member>
+        <member name="T:CoreClass.OperateStringClass">
+            <summary>
+            字符串操作类
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.MD5Encryption(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="password">密码</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.DESEncryption(System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="Text">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.DESDecryption(System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="Text">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.Escape(System.String)">
+            <summary>
+            转意
+            </summary>
+            <param name="str">需要转意的字符串</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.Escape(System.Object)">
+            <summary>
+            转意
+            </summary>
+            <param name="s">需要转意的字符串对象</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.unEscape(System.String)">
+            <summary>
+            反转意
+            </summary>
+            <param name="str">需要反转意的字符串</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.unEscape(System.Object)">
+            <summary>
+            反转意
+            </summary>
+            <param name="s">需要反转意的字符串对象</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.RemoveScriptTags(System.String)">
+            <summary>
+            删除Script标记
+            </summary>
+            <param name="Htmlstring">字符串对象</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.RemoveHtmlTags(System.String)">
+            <summary>
+            删除html标记
+            </summary>
+            <param name="Htmlstring">html字符串</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.RemoveHtmlTags(System.Object)">
+            <summary>
+            删除html标记
+            </summary>
+            <param name="s">html字符串对象</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.String,System.Int32)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="length">长度</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.Object,System.Int32)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="length">长度</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.String,System.Int32,System.String)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="length">长度</param>
+            <param name="add">后缀</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.Object,System.Int32,System.String)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="length">长度</param>
+            <param name="add">后缀</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.String,System.Int32,System.Int32)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="Beforelength">起始位置</param>
+            <param name="length">结束位置（起始位置开始）</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.Object,System.Int32,System.Int32)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="Beforelength">起始位置</param>
+            <param name="length">结束位置（起始位置开始）</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="Beforelength">起始位置</param>
+            <param name="length">结束位置（起始位置开始）</param>
+            <param name="add">后缀</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.CutString(System.Object,System.Int32,System.Int32,System.String)">
+            <summary>
+            截字符串
+            </summary>
+            <param name="s">内容</param>
+            <param name="Beforelength">起始位置</param>
+            <param name="length">结束位置（起始位置开始）</param>
+            <param name="add">后缀</param>
+            <returns>处理后字符串</returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.DecideNull(System.String[])">
+            <summary>
+            判断数组中是否有值为空
+            </summary>
+            <param name="arr">需要检测的数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.DecideNull(System.String[],System.String[])">
+            <summary>
+            判断数组中是否有包含检测的字符
+            </summary>
+            <param name="arr">需要检测的数组</param>
+            <param name="parr">包含检测的字符枚举</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.RandomNumber">
+            <summary>
+            生成伪随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.RandomNumber(System.Int32,System.Int32)">
+            <summary>
+            生成伪随机数
+            </summary>
+            <param name="starnum">启始值</param>
+            <param name="endnum">结束值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.DetectSql(System.String[])">
+            <summary>
+            检测数据库注入
+            <param name="str">需要检测的字符串数组</param>
+            </summary>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.StrToAry16(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            从汉字转换到16进制
+            </summary>
+            <param name="s">需要要转换的汉字</param>
+            <param name="charset">编码,如"utf-8","gb2312"</param>
+            <param name="fenge">是否每字符用逗号分隔</param>
+            <param name="p">指示是高位在前还是低位在前,1为高位在前,0为低位在前</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.Ary16ToStr(System.String,System.String,System.Boolean)">
+            <summary>
+            从16进制转换成汉字
+            </summary>
+            <param name="hex">需要转换的16进制(不含分隔符)</param>
+            <param name="charset">编码,如"utf-8","gb2312"</param>
+            <param name="p">指示是高位在前还是低位在前,1为高位在前,0为低位在前</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.StrToAryByte(System.String,System.String,System.Boolean)">
+            <summary>
+            从汉字转换到byte[]
+            </summary>
+            <param name="s">需要要转换的汉字</param>
+            <param name="charset">编码,如"utf-8","gb2312"</param>
+            <param name="p">指示是高位在前还是低位在前,1为高位在前,0为低位在前</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoreClass.OperateStringClass.AryByteToStr(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            从汉字转换到byte[]
+            </summary>
+            <param name="s">需要要转换的byte[]</param>
+            <param name="charset">编码,如"utf-8","gb2312"</param>
+            <param name="p">指示是高位在前还是低位在前,1为高位在前,0为低位在前</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

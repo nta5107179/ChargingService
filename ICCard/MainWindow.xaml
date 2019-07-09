@@ -1,0 +1,50 @@
+﻿<Window x:Class="ICCard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ICCard" Height="320" Width="640" WindowStartupLocation="CenterScreen" Icon="Resource/logo.ico">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <GroupBox Header="串口设置" DockPanel.Dock="Top">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="串口：" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="1.37,0.587"/>
+                        <ComboBox x:Name="combox_port" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center" Width="162" SelectedIndex="0">
+                            <TextBlock Text="--请选择--" Tag="" />
+                        </ComboBox>
+                        <Button x:Name="but_open" Content="打开串口" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Width="75" Click="but_open_Click"/>
+                        <Button x:Name="but_reset" Content="恢复出厂" HorizontalAlignment="Right" Margin="5,0,0,0" VerticalAlignment="Center" Width="75" Click="but_reset_Click" DockPanel.Dock="Right" IsEnabled="False"/>
+                        <Button x:Name="but_set" Content="设置模块" HorizontalAlignment="Right" Margin="5,0,0,0" VerticalAlignment="Center" Width="75" Click="but_set_Click" DockPanel.Dock="Right" IsEnabled="False"/>
+                    </DockPanel>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <GroupBox Header="读卡" Width="300">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Button x:Name="but_read" Content="读卡" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Width="45" Click="but_readcard_Click" DockPanel.Dock="Right" IsEnabled="False"/>
+                        <TextBox x:Name="text_read" IsReadOnly="True" />
+                    </DockPanel>
+                </DockPanel>
+            </GroupBox>
+            <GroupBox Header="写卡" DockPanel.Dock="Right" Margin="5,0,0,0">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Button x:Name="but_write" Content="写卡" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Width="45" Click="but_writecard_Click" DockPanel.Dock="Right" IsEnabled="False"/>
+                        <TextBox x:Name="text_write" IsReadOnly="True" Text="" />
+                    </DockPanel>
+                </DockPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top"/>
+        <GroupBox Header="日志">
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <Button x:Name="but_rClear" Width="50" Height="22" Content="清空" HorizontalAlignment="Left" Margin="0" Click="but_rClear_Click" />
+                </DockPanel>
+                <TextBox x:Name="text_rData" Margin="0,5,0,0" TextWrapping="Wrap" IsReadOnly="True" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"/>
+            </DockPanel>
+
+        </GroupBox>
+    </DockPanel>
+</Window>

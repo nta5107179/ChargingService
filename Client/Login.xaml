@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:Controls;assembly=Controls" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="Client.Login"
+        Title="Login" WindowStartupLocation="CenterScreen" Background="{x:Null}" AllowsTransparency="True" WindowStyle="None" Width="350" Height="390" KeyDown="Window_KeyDown" ResizeMode="CanMinimize" BorderBrush="#FF0F7978" BorderThickness="1">
+	<Grid Margin="0">
+        <Grid x:Name="grid_outside" Margin="0" MouseDown="grid_outside_MouseDown">
+		    <Grid.Background>
+			    <ImageBrush ImageSource="Resources/login_1.png"/>
+		    </Grid.Background>
+		    <TextBox x:Name="text_name" HorizontalAlignment="Left" Height="40" Margin="39,189,0,0" Text="" VerticalAlignment="Top" Width="270" VerticalContentAlignment="Center" BorderThickness="1" Style="{DynamicResource user name}" FontSize="15" Foreground="#FF444444"/>
+            <PasswordBox x:Name="text_pwd" HorizontalAlignment="Left" Margin="39,238,0,0" VerticalAlignment="Top" Width="270" Height="40" VerticalContentAlignment="Center" Style="{DynamicResource user pwd}" Foreground="#FF444444"/>
+            <CheckBox x:Name="check_remember" Content="记住账号" HorizontalAlignment="Left" Margin="39,303,0,0" VerticalAlignment="Top" FontSize="15" Foreground="White" FontWeight="Bold" TextOptions.TextFormattingMode="Display"/>
+        </Grid>
+        <DockPanel Height="25" LastChildFill="False" Margin="0" VerticalAlignment="Top">
+            <Controls:WindowClose Margin="0" VerticalAlignment="Top" Foreground="#FF4B4C4C" Width="25" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Height="25" DockPanel.Dock="Right"/>
+            <Controls:WindowMinimum VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" DockPanel.Dock="Right" Foreground="#FF4B4C4C" />
+        </DockPanel>
+        <Image x:Name="img_login" HorizontalAlignment="Left" Height="38" Margin="214,294,0,0" VerticalAlignment="Top" Width="95" MouseUp="img_login_MouseUp" Style="{DynamicResource login button}"/>
+    </Grid>
+</Window>
